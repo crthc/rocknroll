@@ -1,1 +1,77 @@
-<p>band works!</p>
+<app-band-header></app-band-header>
+
+<div class="row animate__animated animate__fadeIn">
+  <div class="col">
+    <form>
+      <!-- <div class="form-group">
+        <label>Firebase ID</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Firebase ID"
+          name="id"
+          disabled="disabled"
+        />
+        <small class="form-text text-muted"></small>
+      </div> -->
+
+      <div class="form-group">
+        <label>Name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Band Name"
+          name="name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label>Genre</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Music genre"
+          name="genre"
+        />
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Band description"
+          name="description"
+        />
+      </div>
+      <div class="form-group">
+        <label>Media</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Add your favourite youtube link"
+          name="media"
+        />
+      </div>
+      <div class="form-group">
+        <label>Band state</label>
+        <br />
+        <button class="btn btn-outline-success w-50" type="button">
+          <i class="fa fa-smile-wink"></i>
+          Active
+        </button>
+        <button class="btn btn-outline-danger w-50" type="button">
+          <i class="fa fa-frown-open"></i>
+          Not active
+        </button>
+      </div>
+
+      <hr />
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary w-25">
+          <i class="fa fa-save"></i>
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
