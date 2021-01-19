@@ -1,9 +1,9 @@
-<app-band-header></app-band-header>
+<app-band-header [band]="band.name"></app-band-header>
 
 <div class="row animate__animated animate__fadeIn">
   <div class="col">
     <form (ngSubmit)="save(f)" #f="ngForm">
-      <div class="form-group">
+      <div class="form-group d-none">
         <label>Firebase ID</label>
         <input
           type="text"

@@ -10,7 +10,8 @@ import Swal from 'sweetalert2';
 })
 export class BandsComponent implements OnInit {
 
-  bands: BandModel[] = [];
+  public bands: BandModel[] = [];
+  searchValue: string;
   loading = false;
 
   constructor(private bandsService: BandsService) { }
@@ -21,6 +22,7 @@ export class BandsComponent implements OnInit {
       .subscribe(resp => {
         this.bands = resp;
         this.loading = false;
+        console.log(this.bands);
       });
   }
 

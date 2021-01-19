@@ -1,5 +1,17 @@
 <app-header></app-header>
 
+<div class="form-group row">
+  <label for="search" class="col-4 col-form-label mt-2">Search by name</label>
+  <div class="col-12">
+    <input
+      type="text"
+      [(ngModel)]="searchValue"
+      class="form-control"
+      id="search"
+    />
+  </div>
+</div>
+
 <table *ngIf="!loading && bands.length > 0" class="table mt-3 animate__fadeIn">
   <thead class="thead-dark">
     <tr>
@@ -11,7 +23,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let band of bands; let i = index">
+    <tr *ngFor="let band of bands | searchFilter: searchValue; let i = index">
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ band.name }}</td>
       <td>{{ band.genre }}</td>

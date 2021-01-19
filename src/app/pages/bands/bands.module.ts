@@ -6,15 +6,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { BandsRoutingModule } from './bands-routing.module';
 import { BandsComponent } from './bands.component';
 import { HeaderComponent } from 'src/app/components/header/header.component';
+import { SearchFilterPipe } from 'src/app/pipes/search-filter.pipe';
 
 
 
 @NgModule({
-  declarations: [BandsComponent, HeaderComponent],
+  declarations: [BandsComponent, HeaderComponent, SearchFilterPipe],
   imports: [
     CommonModule,
     BandsRoutingModule,
     FormsModule,
+  
     HttpClientModule
   ]
 })
