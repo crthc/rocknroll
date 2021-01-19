@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { BandModel } from 'src/app/models/band.model';
+import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { BandModel } from 'src/app/models/band.model';
 import { BandsService } from 'src/app/services/bands.service';
 import Swal from 'sweetalert2';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-band',
@@ -14,9 +15,19 @@ export class BandComponent implements OnInit {
 
   band = new BandModel();
 
-  constructor(private bandsService: BandsService) { }
+  constructor(private bandsService: BandsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    const id = this.route.snapshot.paramMap.get('id');
+
+    if( id !== 'new'){
+      this.bandsService.getBand(id)
+        .subscribe( (resp: BandModel) => {
+          this.band = resp;
+          this.band.id = id;
+        })
+    }
   }
   
   save(form:NgForm){

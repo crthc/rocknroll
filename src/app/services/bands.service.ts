@@ -23,6 +23,10 @@ export class BandsService {
           );
   }
 
+  deleteBand( id: string){
+    return this.http.delete(`${this.url}/bands/${id}.json`);
+  }
+
   updateBand( band: BandModel ){
 
     const bandTemp = {
@@ -32,6 +36,10 @@ export class BandsService {
     delete bandTemp.id;
 
     return this.http.put(`${this.url}/bands/${band.id}.json`, bandTemp);
+  }
+
+  getBand( id:string){
+    return this.http.get(`${this.url}/bands/${id}.json`);
   }
 
   getBands(){
