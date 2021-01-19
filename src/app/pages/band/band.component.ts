@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BandModel } from 'src/app/models/band.model';
 import { NgForm } from '@angular/forms';
 import { BandsService } from 'src/app/services/bands.service';
+import Swal from 'sweetalert2';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-band',
@@ -24,38 +26,30 @@ export class BandComponent implements OnInit {
       return;
     }
 
-    this.bandsService.createBand(this.band)
-      .subscribe(resp => console.log(resp));
+    Swal.fire({
+      title: 'Wait',
+      text: 'Saving information',
+      icon: 'info',
+      allowOutsideClick: false
+    });
+    Swal.showLoading();
 
-    // if(form.invalid){
-    //   console.log('Form not valid');
-    //   return;
-    // }
+    let request: Observable<any>;
 
-    // Swal.fire({
-    //   title: 'Wait',
-    //   text: 'Saving information',
-    //   icon: 'info',
-    //   allowOutsideClick: false
-    // });
-    // Swal.showLoading();
+    if(this.band.id){
+      request = this.bandsService.updateBand(this.band);
+    }else{
+      request = this.bandsService.createBand(this.band);
+    }
 
-    // let request: Observable<any>;
+    request.subscribe(resp => {
 
-    // if(this.artist.id){
-    //   request = this.artistsService.updateArtist(this.artist);
-    // }else{
-    //   request = this.artistsService.createArtist(this.artist);
-    // }
-
-    // request.subscribe(resp => {
-
-    //   Swal.fire({
-    //     title: this.artist.name,
-    //     text: 'Succesfully updated',
-    //     icon: 'success'
-    //   });
-    // })
+      Swal.fire({
+        title: this.band.name,
+        text: 'Succesfully updated',
+        icon: 'success'
+      });
+    })
 
 
   }

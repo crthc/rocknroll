@@ -22,4 +22,43 @@ export class BandsService {
             })
           );
   }
+
+  updateBand( band: BandModel ){
+
+    const bandTemp = {
+      ...band 
+    };
+
+    delete bandTemp.id;
+
+    return this.http.put(`${this.url}/bands/${band.id}.json`, bandTemp);
+  }
+
+  getBands(){
+    return this.http.get(`${this.url}/bands.json`)
+            .pipe(
+              map ( this.createArray ),
+              delay(1000)
+            );
+  }
+
+  private createArray( bandObj: object){
+
+    const bands: BandModel[] = [];
+
+    if(bandObj === null){
+      return [];
+    }
+
+    Object.keys(bandObj).forEach(key =>{
+      const band: BandModel = bandObj[key];
+      band.id = key;
+
+      bands.push(band);
+    })
+
+    return bands;
+  }
+
+
 }
