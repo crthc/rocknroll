@@ -1,92 +1,106 @@
-<app-band-header [band]="band.name"></app-band-header>
+<div class="container mt-5">
+  <div class="container-fluid">
+    <h1 class="font-weight-light">Band {{ band.name }}</h1>
+    <hr />
 
-<div class="row animate__animated animate__fadeIn">
-  <div class="col">
-    <form (ngSubmit)="save(f)" #f="ngForm">
-      <div class="form-group d-none">
-        <label>Firebase ID</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Firebase ID"
-          [(ngModel)]="band.id"
-          name="id"
-          disabled="disabled"
-        />
-        <small class="form-text text-muted"></small>
-      </div>
-
-      <div class="form-group">
-        <label>Name</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Band Name"
-          [(ngModel)]="band.name"
-          name="name"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label>Genre</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Music genre"
-          [(ngModel)]="band.genre"
-          name="genre"
-        />
-      </div>
-      <div class="form-group">
-        <label>Description</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Band description"
-          [(ngModel)]="band.description"
-          name="description"
-        />
-      </div>
-      <div class="form-group">
-        <label>Media</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Add your favourite youtube link"
-          [(ngModel)]="band.media"
-          name="media"
-        />
-      </div>
-      <div class="form-group">
-        <label>Band state</label>
-        <br />
-        <button
-          *ngIf="band.state"
-          (click)="band.state = false"
-          class="btn btn-outline-success w-50"
-          type="button"
-        >
-          <i class="fa fa-smile-wink"></i>
-          Active
-        </button>
-        <button
-          *ngIf="!band.state"
-          (click)="band.state = true"
-          class="btn btn-outline-danger w-50"
-          type="button"
-        >
-          <i class="fa fa-frown-open"></i>
-          Not active
+    <div class="row text-right">
+      <div class="col">
+        <button routerLink="/bands" class="btn btn-danger">
+          <i class="fa fa-arrow-left"></i>
+          Go back
         </button>
       </div>
+    </div>
 
-      <hr />
-      <div class="form-group text-center">
-        <button type="submit" class="btn btn-primary w-25">
-          <i class="fa fa-save"></i>
-          Save
-        </button>
+    <div class="row animate__animated animate__fadeIn">
+      <div class="col">
+        <form (ngSubmit)="save(f)" #f="ngForm">
+          <div class="form-group d-none">
+            <label>Firebase ID</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Firebase ID"
+              [(ngModel)]="band.id"
+              name="id"
+              disabled="disabled"
+            />
+            <small class="form-text text-muted"></small>
+          </div>
+
+          <div class="form-group">
+            <label>Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Band Name"
+              [(ngModel)]="band.name"
+              name="name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Genre</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Music genre"
+              [(ngModel)]="band.genre"
+              name="genre"
+            />
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Band description"
+              [(ngModel)]="band.description"
+              name="description"
+            />
+          </div>
+          <div class="form-group">
+            <label>Media</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Add your favourite youtube link"
+              [(ngModel)]="band.media"
+              name="media"
+            />
+          </div>
+          <div class="form-group">
+            <label>Band state</label>
+            <br />
+            <button
+              *ngIf="band.state"
+              (click)="band.state = false"
+              class="btn btn-outline-success w-50"
+              type="button"
+            >
+              <i class="fa fa-smile-wink"></i>
+              Active
+            </button>
+            <button
+              *ngIf="!band.state"
+              (click)="band.state = true"
+              class="btn btn-outline-danger w-50"
+              type="button"
+            >
+              <i class="fa fa-frown-open"></i>
+              Not active
+            </button>
+          </div>
+
+          <hr />
+          <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary w-25">
+              <i class="fa fa-save"></i>
+              Save
+            </button>
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
   </div>
 </div>

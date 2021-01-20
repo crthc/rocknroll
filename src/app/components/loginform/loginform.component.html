@@ -1,0 +1,37 @@
+<div class="card login-form bg-transparent mb-5">
+  <div class="card-body">
+    <h3 class="card-title text-center text-white">Log in - 70's rock!</h3>
+    <div class="card-text">
+      <form id="login-form" [formGroup]="form" (ngSubmit)="sign()">
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control form-control-sm"
+            placeholder="E-mail Address"
+            formControlName="email"
+            [class.is-invalid]="emailNotValid"
+          />
+          <small *ngIf="emailNotValid" class="text-white"
+            >Enter a valid e-mail</small
+          >
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            placeholder="Password"
+            class="form-control form-control-sm mb-2"
+            formControlName="password"
+            [class.is-invalid]="passwordNotValid"
+          />
+          <small *ngIf="passwordNotValid" class="text-white"
+            >Password must be between 8 minimum and 20 maximum characters</small
+          >
+        </div>
+
+        <button id="submit-button" type="submit" class="btn btn-info btn-block">
+          Sign in
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

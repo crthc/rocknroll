@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BandHeaderComponent } from './band-header.component';
+import { NopagefoundComponent } from './nopagefound.component';
 
-describe('BandHeaderComponent', () => {
-  let component: BandHeaderComponent;
-  let fixture: ComponentFixture<BandHeaderComponent>;
+describe('NopagefoundComponent', () => {
+  let component: NopagefoundComponent;
+  let fixture: ComponentFixture<NopagefoundComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BandHeaderComponent ]
+      declarations: [ NopagefoundComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BandHeaderComponent);
+    fixture = TestBed.createComponent(NopagefoundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

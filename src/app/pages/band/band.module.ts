@@ -5,11 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { BandRoutingModule } from './band-routing.module';
 import { BandComponent } from './band.component';
-import { BandHeaderComponent } from 'src/app/components/band-header/band-header.component';
 
 
 @NgModule({
-  declarations: [BandComponent, BandHeaderComponent],
+  declarations: [BandComponent],
   imports: [
     CommonModule,
     BandRoutingModule,
