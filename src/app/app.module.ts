@@ -4,20 +4,19 @@ import { FormsModule }from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { PagesModule } from './pages/pages.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-
-
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    PagesModule,
     FormsModule,
     HttpClientModule
   ],
