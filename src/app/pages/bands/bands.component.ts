@@ -22,7 +22,6 @@ export class BandsComponent implements OnInit {
       .subscribe(resp => {
         this.bands = resp;
         this.loading = false;
-        console.log(this.bands);
       });
   }
 

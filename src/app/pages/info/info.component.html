@@ -1,2 +1,53 @@
-<p>{{ band.name }}</p>
-<p>{{ band.description }}</p>
+<div class="container animate__animated animate__fadeIn">
+  <div class="container-fluid">
+    <div class="row mt-5">
+      <div class="col">
+        <h3>{{ band.name }}</h3>
+      </div>
+      <div class="col text-right">
+        <button class="btn btn btn-danger" routerLink="/bands">go back</button>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-10">
+        <p>{{ band.description }}</p>
+      </div>
+    </div>
+    <div class="row d-flex mt-2">
+      <div class="col-4">
+        <div class="card border-light" *ngFor="let video of videos">
+          <div class="card-body">
+            <h5 class="card-title">
+              Listen to {{ band.name }}!
+              <img
+                src="../../../assets/images/rock.png"
+                alt="rock"
+                class="img-fluid rockLogo"
+              />
+            </h5>
+
+            <button
+              (click)="showVideo(video)"
+              class="btn btn-outline-primary btn-block"
+            >
+              Play
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <svg
+          viewBox="0 0 200 200"
+          xmlns="http://www.w3.org/2000/svg"
+          class="guitarPick"
+        >
+          <path
+            fill="#A83931"
+            d="M38.8,-30.2C45.4,-22.7,42.5,-6.8,41.2,13.6C39.9,34.1,40.2,59.1,30.6,63.8C21,68.5,1.5,52.9,-14.3,40.9C-30.2,29,-42.4,20.7,-45.9,9.4C-49.3,-2,-44.1,-16.5,-35,-24.5C-25.9,-32.6,-12.9,-34.2,1.6,-35.5C16.1,-36.7,32.2,-37.6,38.8,-30.2Z"
+            transform="translate(100 100)"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
