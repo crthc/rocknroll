@@ -9,12 +9,21 @@ const routes: Routes = [
     loadChildren: () =>
     import('./auth/login/login.module').then(m => m.LoginModule) 
   },
-  { path: "**", component: NopagefoundComponent},
+  { path: "**", 
+    component: NopagefoundComponent, 
+    data: {
+      title: 'Page not found - RocknRoll',
+      description: 'Rocknroll is where people list their music. More than 56 million people use Rocknroll to save and play their favourite music.',
+      ogTitle: 'Play music better, together',
+    } 
+  },
 ];
 
 @NgModule({
   imports: [
-		RouterModule.forRoot(routes),
+		RouterModule.forRoot(routes, {
+    initialNavigation: 'enabled'
+}),
     PagesRoutingModule,
 ],
   exports: [RouterModule]
