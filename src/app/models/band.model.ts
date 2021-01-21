@@ -4,6 +4,7 @@ export class BandModel{
   name: string;
   genre: string;
   description: string;
+  media: string;
   state: boolean;
 
   constructor(){

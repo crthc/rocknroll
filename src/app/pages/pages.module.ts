@@ -31,7 +31,7 @@ import { SearchFilterPipe } from 'src/app/pipes/search-filter.pipe';
     CommonModule,
     RouterModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ]
 })
 export class PagesModule { }

@@ -50,8 +50,7 @@ export class LoginformComponent implements OnInit {
 	}
 
 	sign() {
-		console.log(this.form);
-
+	
 		if (this.form.invalid) {
 			return Object.values(this.form.controls).forEach((control) => {
 				control.markAsTouched();
